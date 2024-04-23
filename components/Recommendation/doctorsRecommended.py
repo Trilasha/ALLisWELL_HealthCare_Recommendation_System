@@ -1,8 +1,15 @@
+import bisect
 
 def doctorsRecommended(doctors_info_df,detected_specialist, special_days=None):
-    relevant_doctors = doctors_info_df[doctors_info_df['Specialization'] == detected_specialist]
-    # relevant_doctors_new.head()
-    # print(relevant_doctors)
+    
+    # Use searchsorted to find the range of indices
+    left_index = doctors_info_df['Specialization'].searchsorted(detected_specialist, side='left')
+    right_index = doctors_info_df['Specialization'].searchsorted(detected_specialist, side='right')
+
+    # Slice the DataFrame based on the indices
+    relevant_doctors = doctors_info_df.iloc[left_index:right_index]
+
+
     if special_days:
         # Convert the input string of days into a list
         special_days_list = [day.strip() for day in special_days.split(',')]

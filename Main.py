@@ -5,20 +5,16 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings("ignore")
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn import svm
-from sklearn import tree
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn import metrics
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import RandomizedSearchCV
 from collections import Counter
 
-from Recommendation.doctorsRecommended import doctorsRecommended
+from Components.Recommendation.doctorsRecommended import doctorsRecommended
+from Models.Model import generateModel
+from Models.Algorithms import algorithms
+# from Components.Recommendation.orderbyDistance import orderbyDistance
 
 pd.set_option('display.max_colwidth', 100)
 
@@ -57,40 +53,13 @@ for i in var_mod:
 X = dis_sym_data_v1.drop(columns="Disease")
 y = dis_sym_data_v1['Disease']
 
+
 print("Training the models...")
-
-def class_algo(model,independent,dependent):
-    model.fit(independent,dependent)
-    pred = model.predict(independent)
-    accuracy = metrics.accuracy_score(pred,dependent)
-    # print(model_name,'Accuracy : %s' % '{0:.3%}'.format(accuracy))
-
-algorithms = {'Logistic Regression':
-              {"model": LogisticRegression()},
-
-              'Decision Tree':
-              {"model": tree.DecisionTreeClassifier()},
-
-              'Random Forest':
-              {"model": RandomForestClassifier()},
-
-              'SVM':
-              {"model": svm.SVC(probability=True)},
-
-              'NaiveBayes' :
-              {"model": GaussianNB()},
-
-              'K-Nearest Neighbors' :
-              {"model": KNeighborsClassifier()},
-             }
+generateModel(X,y)
 
 
-for model_name, values in algorithms.items():
-    class_algo(values["model"],X,y)
-
-
+## Data Preprocessing for Doctor Recommendation
 doc_data = pd.read_csv("/datasets/Doctor_Versus_Disease.csv",encoding='latin1', names=['Disease','Specialist'])
-
 # doc_data.tail(5)
 
 doc_data['Specialist'] = np.where((doc_data['Disease'] == 'Tuberculosis'),'Pulmonologist', doc_data['Specialist'])
@@ -102,7 +71,11 @@ des_data = pd.read_csv("/datasets/Disease_Description.csv")
 # des_data.head()
 
 doctors_info_df = pd.read_csv('/datasets/Doctors_info.csv')
+# Sort the DataFrame by 'Specialization'
+doctors_info_df = doctors_info_df.sort_values(by='Specialization')
 
+# Reset index after sorting
+doctors_info_df = doctors_info_df.reset_index(drop=True)
 
 
 test_col = []
@@ -110,6 +83,8 @@ for col in dis_sym_data_v1.columns:
     if col != 'Disease':
         test_col.append(col)
 
+
+print("\n--------------------------------------------------------------------------------------------------\n")
 
 test_data = {}
 symptoms = []
@@ -141,22 +116,38 @@ def test_input():
 table=test_input()
 print(table)
 
-print("Let's provide you with the best recommended doctors for the above probable diseases\n")
+print("\n--------------------------------------------------------------------------------------------------\n")
+print("Let's provide you with the best recommended doctors for the above probable diseases.....\n")
+print("--------------------------------------------------------------------------------------------------\n")
 
 
 
 def test_input():
-    special_days_input = input("Enter the preferable days for visit separated by commas (e.g., Mon,Wed,Fri), or leave blank if not applicable: ")
-    special_days = special_days_input.strip() if special_days_input else None
+    patientName= input("Enter your name: ")
+    days_input = input("Enter the preferable days for visit separated by commas (e.g., Mon,Wed,Fri), or leave blank if not applicable: ")
+    days = days_input.strip() if days_input else None
 
+    doctorIDS = []  
     # Display recommended doctors for all predicted diseases
     for index, row in table.iterrows():
         detected_disease= row['Disease']
         detected_specialist = row['Specialist']
-        recommended_doctors = doctorsRecommended(doctors_info_df,detected_specialist, special_days)
+        recommended_doctors = doctorsRecommended(doctors_info_df,detected_specialist, days)
         if(recommended_doctors.empty):
             print("\nNo doctors found for", detected_disease, "with specialist", detected_specialist, "on the specified days and location.")
-        print("\nRecommended doctors for", detected_disease, "with specialist", detected_specialist, ":")
-        print(recommended_doctors)
+        else:
+            print("\nRecommended doctors for", detected_disease, "with specialist", detected_specialist, ":")
+            for index, row in recommended_doctors.iterrows():
+                print(row['Doctor_Name'], "(", row['Specialization'], ")", " - ", row['Work_Location'])
+                doctorIDS.append(row['Doctor_ID'])
+            print("\n--------------------------------------------------------------------------------------------------\n")
+    print("Do you want to know the approximate distance of the recommended doctors from your location?")
+    answer= input("Enter 'yes' or 'no': ")
+    if answer.lower() == 'yes':
+        patientAddress = input("Enter your location: ")                                                    
+        print("\n--------------------------------------------------------------------------------------------------\n")
+        print("Approximate distance of the recommended doctors from your location (in ascending order):")
+        # orderbyDistance(recommended_doctors,patientAddress)
+
 
 test_input()
