@@ -1,0 +1,7 @@
+﻿Doctor_ID,Doctor_Name,Specialization,Work_Location,State,Availability,Fee,Recommendedation(in %),Contact_Info
+101,Dr. Atanu Bhowmik,Allergist,"Niramoy Hospital, Jorhat",Assam,"Mon,Fri",1000,70,9876543212
+102,Dr. Trilasha Mazumder,Dermatologist,"All Good Hospital, Gachibowli",Hyderabad,"Mon,Tue,Sat",1200,50,9876543214
+103,Dr.Suraiya Parween,Gastroenterologist,"Lilawati Hospital, Mumbai",Maharashtra,"Mon,Wed,Thu,Sat,Sun",500,80,9876543216
+104,Dr. Dimpal Kalita,Osteopathic,"Home's Stay Hospital, Bengaluru",Karnataka,"Mon,Tue,Sat",1200,90,9876543218
+105,Dr. Shagun Singh,Pulmonologist,"South City Hospital, ",Meghalaya,"Mon,Tue,Sat",1000,30,9876543210
+106,Dr. Hiteshi Mathur,Allergist,"Norther City Hospital, Ahmedabad",Gujarat,"Mon,Fri",1000,70,1234567899
