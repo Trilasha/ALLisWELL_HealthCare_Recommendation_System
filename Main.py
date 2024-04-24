@@ -113,7 +113,7 @@ def recommendDoctors():
         print("Sorted order of the recommended doctors (in terms of their user ratings) in descending order:")
         print("\n--------------------------------------------------------------------------------------------------\n")
         doctorID_df=pd.DataFrame(doctorIDS)
-        sortedDoctorsByRating=orderByRating(doctorID_df)
+        sortedDoctorsByRating=orderByRating(doctors_info_df,doctorID_df)
         print(sortedDoctorsByRating)
     print("Do you want to know the approximate distance of the recommended doctors from your location?")
     answer= input("Enter 'yes' or 'no': ")
@@ -123,8 +123,7 @@ def recommendDoctors():
         print("\n--------------------------------------------------------------------------------------------------\n")
         print("Sorted order of the recommended doctors (in terms of their distance) in ascending order:")
         print("\n--------------------------------------------------------------------------------------------------\n")
-        doctorIDdf=pd.DataFrame(doctorIDS)
-        sortedDoctors=orderByDistance(doctorIDdf,patientCity)
+        sortedDoctors=orderByDistance(doctors_info_df,doctorID_df,patientCity)
         print(sortedDoctors)
     else:
         print("Thank you for using the HealthCare Recommendation System!")
@@ -158,6 +157,7 @@ def register_doctor():
 
 
 while True:
+    doctors_info_df=pd.read_csv('./Datasets/Doctors_info.csv')
     print("\n---------------------------------------------------------------------------------")
     print("               Welcome to ALLisWELL - HealthCare Recommendation System               ")
     print("-----------------------------------------------------------------------------------\n")

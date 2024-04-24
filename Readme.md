@@ -1,5 +1,7 @@
 # ALLisWELL - Healthcare Recommendation System
 
+**ALLisWELL** is a Command Line Interface (CLI) Application that uses machine learning algorithms to analyze user symptoms, predict relevant diseases, and recommend doctors based on specialties, availability, user ratings, preferences and proximity.
+
 ## Table of Contents
 1. [Installation](#installation)
 2. [Usage](#usage)
@@ -103,11 +105,15 @@ This project explores the use of machine learning algorithms to predict diseases
 Utilizing the above-mentioned machine learning algorithms, the prediction accuracy has been rigorously evaluated and found to be over 90%. This high accuracy rate ensures reliable disease prediction, providing users with confidence in the system's recommendations. 
 
 ## Features
-//
+Users can access the system either as patients or doctors, offering versatility and convenience in healthcare management.
 
-//
+1.  **As a patient**, you can input your symptoms, and the system will utilize machine learning algorithms to predict the most accurate diseases. It will then recommend doctors with the desired specializations who align with your availability and schedule. You have the option to filter doctors based on user ratings, ensuring the highest-rated doctors are prioritized. Additionally, the system provides information on the nearest doctors from your location, along with approximate distances, facilitating your selection of the most suitable doctor according to your preferences.
 
-//
+2. Doctors can register themselves in our database by logging into the system with their credentials and completing their profile information. Upon submission, their details will be securely added to the database.
+
+3. Additionally, the system incorporates a Feedback mechanism where users can rate their experience with the doctor after each visit. This feedback mechanism plays a crucial role in updating individual doctor’s ratings, enhancing the accuracy of the recommendation model over time. By integrating user feedback, the system continuously refines its ability to provide precise and relevant information to users for future healthcare decisions.
+
+
 
 ## Technological Stack 
 - **pandas**
@@ -127,8 +133,3 @@ Utilizing the above-mentioned machine learning algorithms, the prediction accura
 
 
 ## Demo
-//
-
-//
-
-//

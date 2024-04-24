@@ -1,9 +1,12 @@
 import pandas as pd
 
 def collect_feedback_and_update_recommendation(doctors_info_df, feedback_dict):
+    print("Welcome to the feedback collection system.")
+    print("Doctors and their IDs:")
+    print(doctors_info_df)
     def calculate_new_recommendation_percentage(current_percentage, total_score, total_feedback):
         new_score = total_score + current_percentage
-        new_percentage = (new_score / total_feedback)
+        new_percentage = (new_score / total_feedback*2)
         return round(new_percentage, 2)
     
     def collect_feedback(feedback_dict):

@@ -2,7 +2,8 @@ import pandas as pd
 import requests
 from geopy.distance import geodesic
 
-def orderByDistance(df, patientCity):
+def orderByDistance(doctors_info_df,doctorsID_df, patientCity):
+    df=doctors_info_df[doctors_info_df['Doctor_ID'].isin(doctorsID_df[0].values)]
     # this function obtains the latitude and longitude points of a location from GeoDB API
     def get_lat_long(location):
         url = f"https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix={location.split(',')[0]}"

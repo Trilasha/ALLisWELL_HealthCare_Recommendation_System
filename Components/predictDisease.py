@@ -4,7 +4,7 @@ from Models.Algorithms import algorithms
 import numpy as np
 
 
-doc_data = pd.read_csv("/datasets/Doctor_Versus_Disease.csv",encoding='latin1', names=['Disease','Specialist'])
+doc_data = pd.read_csv("./Datasets/Doctor_Versus_Disease.csv",encoding='latin1', names=['Disease','Specialist'])
 doc_data['Specialist'] = np.where((doc_data['Disease'] == 'Tuberculosis'),'Pulmonologist', doc_data['Specialist'])
 des_data = pd.read_csv("./Datasets/Disease_Description.csv")
 
