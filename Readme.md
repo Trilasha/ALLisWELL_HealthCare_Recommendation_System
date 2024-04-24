@@ -137,5 +137,6 @@ Users can access the system either as patients or doctors, offering versatility 
 ## Demo
 
 [Checkout the demoVideo](https://drive.google.com/file/d/1fcAzfkub945eJrbJq9JywaJlAd4Mb8be/view?usp=sharing)
-clear
+
+
 ![alt text](image.png)
