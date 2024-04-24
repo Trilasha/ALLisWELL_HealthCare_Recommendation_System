@@ -68,12 +68,13 @@ For more information on setting up virtual environments,you may refer to the [of
    ```
 ## Directory Structure
 ```
-    ├── Components/
+    |── Components/
+    │   ├── Feedback.py
     │   ├── Recommendation/
-    │   │   ├── doctorsRecommended.py
     │   │   ├── orderByAvailability.py
-    │   │   └── orderByDistance.py
-    │   └── diseasePrediction.py
+    │   │   ├── orderByDistance.py
+    │   │   └── orderByRating.py
+    │   └── predictDisease.py
     |
     ├── Datasets/
     │   ├── Disease_Prediction.csv
@@ -87,7 +88,8 @@ For more information on setting up virtual environments,you may refer to the [of
     |
     ├── Main.py
     ├── README.md
-    └── requirements.txt
+    └── requirements.txt`
+
 ```
 
 ## AI Integration 
@@ -133,3 +135,7 @@ Users can access the system either as patients or doctors, offering versatility 
 
 
 ## Demo
+
+[Checkout the demoVideo](https://drive.google.com/file/d/1fcAzfkub945eJrbJq9JywaJlAd4Mb8be/view?usp=sharing)
+clear
+![alt text](image.png)
