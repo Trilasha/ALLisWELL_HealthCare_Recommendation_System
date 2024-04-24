@@ -100,7 +100,7 @@ This project explores the use of machine learning algorithms to predict diseases
 - **NaiveBayes**
 - **K-Nearest Neighbors**
 
-Utilizing the above-mentioned machine learning algorithms, the prediction accuracy has been rigorously evaluated and found to ebe over 90%. This high accuracy rate ensures reliable disease prediction, providing users with confidence in the system's recommendations. 
+Utilizing the above-mentioned machine learning algorithms, the prediction accuracy has been rigorously evaluated and found to be over 90%. This high accuracy rate ensures reliable disease prediction, providing users with confidence in the system's recommendations. 
 
 ## Features
 //

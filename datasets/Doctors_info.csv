@@ -1,7 +1,10 @@
-﻿Doctor_ID,Doctor_Name,Specialization,Work_Location,State,City,Availability,Fee,Recommendedation(in %),Contact_Info
-101,Dr. Atanu Bhowmik,Allergist,"Niramoy Hospital, Jorhat",Assam,Jorhat,"Mon,Fri",1000,70,9876543212
-102,Dr. Trilasha Mazumder,Dermatologist,"All Good Hospital, Gachibowli",Telangana,Hyderabad,"Mon,Tue,Sat",1200,50,9876543214
-103,Dr.Suraiya Parween,Gastroenterologist,"Lilawati Hospital, Mumbai",Maharashtra,Mumbai,"Mon,Wed,Thu,Sat,Sun",500,80,9876543216
-104,Dr. Dimpal Kalita,Osteopathic,"Home's Stay Hospital, Bengaluru",Karnataka,Bengaluru,"Mon,Tue,Sat",1200,90,9876543218
-105,Dr. Shagun Singh,Pulmonologist,South City Hospital,Meghalaya,Shillong ,"Mon,Tue,Sat",1000,30,9876543210
-106,Dr. Hiteshi Mathur,Allergist,"Norther City Hospital, Ahmedabad",Gujarat,Dwarka,"Mon,Fri",1000,70,1234567899
+Doctor_ID,Doctor_Name,Specialization,Work_Location,State,City,Availability,Fee,UserRating,Contact_Info
+145,Dr. Shilpa Rao,Allergist,"Ramanujan Hospital, Chennai",Tamil Nadu,Chennai,"Mon,Fri",700,3.0,7687909878
+106,Dr. Hiteshi Mathur,Allergist,"Norther City Hospital, Ahmedabad",Gujarat,Dwarka,"Mon,Fri",1000,4.8,1234567899
+101,Dr. Atanu Bhowmik,Allergist,"Niramoy Hospital, Jorhat",Assam,Jorhat,"Mon,Fri",1000,4.4,9876543212
+1777,Dr. Maruti Chanda,Allergist,"Jamuni Bharat Hospital, ",Manipur,Imphal,Tue,1200,4.91,1234564560
+102,Dr. Trilasha Mazumder,Dermatologist,"All Good Hospital, Gachibowli",Telangana,Hyderabad,"Mon,Tue,Sat",1200,50.0,9876543214
+103,Dr.Suraiya Parween,Gastroenterologist,"Lilawati Hospital, Mumbai",Maharashtra,Mumbai,"Mon,Wed,Thu,Sat,Sun",500,80.0,9876543216
+104,Dr. Dimpal Kalita,Osteopathic,"Home's Stay Hospital, Bengaluru",Karnataka,Bengaluru,"Mon,Tue,Sat",1200,90.0,9876543218
+105,Dr. Shagun Singh,Pulmonologist,South City Hospital,Meghalaya,Shillong ,"Mon,Tue,Sat",1000,30.0,9876543210
+234,vdjcnkdjs,klcnld,cjdnsjc,vjdk,cndsj,cidncdn,jndk,3.0,dkj
