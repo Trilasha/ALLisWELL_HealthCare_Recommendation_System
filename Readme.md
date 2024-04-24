@@ -70,7 +70,7 @@ For more information on setting up virtual environments,you may refer to the [of
 ```
     |── Components/
     │   ├── Feedback.py
-    │   ├── Recommendation/
+    │   ├── DoctorRecommendation/
     │   │   ├── orderByAvailability.py
     │   │   ├── orderByDistance.py
     │   │   └── orderByRating.py
