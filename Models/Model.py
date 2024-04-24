@@ -6,7 +6,7 @@ def generateModel(X,y):
         model.fit(independent,dependent)
         pred = model.predict(independent)
         accuracy = metrics.accuracy_score(pred,dependent)
-        print(model_name,'Accuracy : %s' % '{0:.3%}'.format(accuracy))
+        # print(model_name,'Accuracy : %s' % '{0:.3%}'.format(accuracy))
 
     
     for model_name, values in algorithms.items():
