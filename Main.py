@@ -21,6 +21,7 @@ from Components.DoctorRecommendation.orderByDistance import orderByDistance
 from Components.DoctorRecommendation.orderByRating import orderByRating
 from Components.predictDisease import predictDisease
 from Components.Feedback import collect_feedback_and_update_recommendation
+from Components.bookAppointment import send_email
 from Models.Model import generateModel
 from Models.Algorithms import algorithms
 
@@ -139,6 +140,7 @@ def register_doctor():
     state = input("Enter your state: ")
     fee= input("Enter your consultation fee: ")
     contact= input("Enter your contact number: ")
+    email= input("Enter your email: ")
     recommendation_percent = 3
     new_doctor = pd.DataFrame({"Doctor_ID": [doctor_id],
                                "Doctor_Name": [doctor_name],
@@ -149,11 +151,23 @@ def register_doctor():
                                "Availability": [availability],
                                "Fee": [fee],
                                "UserRating": [recommendation_percent],
-                               "Contact_Info": [contact]})
+                               "Contact_Info": [contact],
+                                "Email": [email]
+                               })
     doctors_info_df = pd.read_csv("./Datasets/Doctors_info.csv")
     doctors_info_df = pd.concat([doctors_info_df, new_doctor], ignore_index=True)
     doctors_info_df.to_csv("./Datasets/Doctors_info.csv", index=False)
     print("Doctor registration successful!")
+
+def find_email(doctors_df,doctor_id):
+    doctors_df['Doctor_ID'] = doctors_df['Doctor_ID'].astype(int)
+    doctor_id= int(doctor_id)
+    for index, row in doctors_df.iterrows():
+        if row['Doctor_ID'] == doctor_id:
+            return row['Email']
+    
+    print("Doctor_ID not found.")
+    return None
 
 
 while True:
@@ -164,9 +178,10 @@ while True:
     print("1. Login as a patient")
     print("2. Login as a doctor")
     print("3. Rate a doctor and provide feedback")
-    print("4. Exit")
+    print("4. Book an appointment ")
+    print("5. Exit")
 
-    choice = input("Enter your choice (1/2/3/4): ")
+    choice = input("Enter your choice (1/2/3/4/5): ")
 
     if choice == '1':
         table = predictDisease(test_data,symptoms,predicted,le,test_col)
@@ -185,10 +200,18 @@ while True:
     elif choice == '3':
         print("-------------- Leave a Feedback --------------------")
         doctors_info_df, feedback_dict = collect_feedback_and_update_recommendation(doctors_info_df, feedback_dict)
-
     elif choice == '4':
+        print("Doctors and their IDs:")
+        print(doctors_info_df)
+        print("Booking an appointment...")
+        patient_name = input("Enter your name: ")
+        receiver_id = input("Enter Doctor's ID: ")
+        receiver_email= find_email(doctors_info_df,receiver_id)
+        if not receiver_email:
+            continue
+        send_email(receiver_email, patient_name)
+    elif choice == '5':
         print("Exiting ALLisWELL HealthCare Recommendation System. Goodbye!")
         break
-
     else:
-        print("Invalid choice. Please enter a valid option (1/2/3/4).")
+        print("Invalid choice. Please enter a valid option (1/2/3/4/5).")

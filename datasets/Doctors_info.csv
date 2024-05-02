@@ -1,10 +1,15 @@
-Doctor_ID,Doctor_Name,Specialization,Work_Location,State,City,Availability,Fee,UserRating,Contact_Info
-145,Dr. Shilpa Rao,Allergist,"Ramanujan Hospital, Chennai",Tamil Nadu,Chennai,"Mon,Fri",700,3.0,7687909878
-106,Dr. Hiteshi Mathur,Allergist,"Norther City Hospital, Ahmedabad",Gujarat,Dwarka,"Mon,Fri",1000,4.8,1234567899
-101,Dr. Atanu Bhowmik,Allergist,"Niramoy Hospital, Jorhat",Assam,Jorhat,"Mon,Fri",1000,4.4,9876543212
-1777,Dr. Maruti Chanda,Allergist,"Jamuni Bharat Hospital, ",Manipur,Imphal,Tue,1200,4.91,1234564560
-102,Dr. Trilasha Mazumder,Dermatologist,"All Good Hospital, Gachibowli",Telangana,Hyderabad,"Mon,Tue,Sat",1200,50.0,9876543214
-103,Dr.Suraiya Parween,Gastroenterologist,"Lilawati Hospital, Mumbai",Maharashtra,Mumbai,"Mon,Wed,Thu,Sat,Sun",500,80.0,9876543216
-104,Dr. Dimpal Kalita,Osteopathic,"Home's Stay Hospital, Bengaluru",Karnataka,Bengaluru,"Mon,Tue,Sat",1200,90.0,9876543218
-105,Dr. Shagun Singh,Pulmonologist,South City Hospital,Meghalaya,Shillong ,"Mon,Tue,Sat",1000,30.0,9876543210
-301,Dr.Harsh Agarwala,Cardiologist,Hartila Hospital,Uttar Pradesh,Hardoi,"Mon,Sat,Sun",1000,3.0,9876543210
+Doctor_ID,Doctor_Name,Specialization,Work_Location,State,City,Availability,Fee,UserRating,Contact_Info,Email
+145,Dr. Shilpa Rao,Allergist,"Ramanujan Hospital, Chennai",Tamil Nadu,Chennai,"Mon,Fri",700,3.0,7687909878,trilasha2023@gmail.com
+106,Dr. Hiteshi Mathur,Allergist,"Norther City Hospital, Ahmedabad",Gujarat,Dwarka,"Mon,Fri",1000,4.8,1234567899,trilasha2023@gmail.com
+101,Dr. Atanu Bhowmik,Allergist,"Niramoy Hospital, Jorhat",Assam,Jorhat,"Mon,Fri",1000,4.4,9876543212,trilasha2023@gmail.com
+1777,Dr. Maruti Chanda,Allergist,"Jamuni Bharat Hospital, ",Manipur,Imphal,Tue,1200,4.91,1234564560,trilasha2023@gmail.com
+102,Dr. Trilasha Mazumder,Dermatologist,"All Good Hospital, Gachibowli",Telangana,Hyderabad,"Mon,Tue,Sat",1200,50.0,9876543214,trilasha2023@gmail.com
+103,Dr.Suraiya Parween,Gastroenterologist,"Lilawati Hospital, Mumbai",Maharashtra,Mumbai,"Mon,Wed,Thu,Sat,Sun",500,80.0,9876543216,trilasha2023@gmail.com
+104,Dr. Dimpal Kalita,Osteopathic,"Home's Stay Hospital, Bengaluru",Karnataka,Bengaluru,"Mon,Tue,Sat",1200,90.0,9876543218,trilasha2023@gmail.com
+105,Dr. Shagun Singh,Pulmonologist,South City Hospital,Meghalaya,Shillong ,"Mon,Tue,Sat",1000,30.0,9876543210,trilasha2023@gmail.com
+301,Dr.Harsh Agarwala,Cardiologist,Hartila Hospital,Uttar Pradesh,Hardoi,"Mon,Sat,Sun",1000,3.0,9876543210,trilasha2023@gmail.com
+405,Dr. Dipak Saha,Allergist,Silchar Hospital,Assam,Silchar,Fri,1000,3.0,8765434567,trilasha2023@gmail.com
+137,Dr.Tilu,allergust,hh,assam,jorhat,Mon,1000,3.0,8765678990,trilasha2023@gmail.com
+156,dr.x,Allergist ,jorhat,jorhat,jorhat,Mon,1000,3.0,876545678,trilasha2023@gmail.com
+168,Dr.Saha,Allergist ,Jorhat,Assam,Jorhat,Mon,1000,3.0,8765456789,trilasha2023@gmail.com
+169,Dr.hi,allergist,jorhat,ASsam,Jorhat,Mon,1000,3.0,8765456789,trilasha2023@gmail.com
